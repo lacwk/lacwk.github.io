@@ -26,8 +26,27 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+	$.getJSON("neighborhoods.geojson",function(hoodData){
+  	L.geoJson( hoodData  , {
+    		style: function(feature){
+      		var fillColor,
+          	density = feature.properties.density;
+      		if ( density > 80 ) fillColor = "#006837";
+      		else if ( density > 40 ) fillColor = "#31a354";
+      		else if ( density > 20 ) fillColor = "#78c679";
+      		else if ( density > 10 ) fillColor = "#c2e699";
+      		else if ( density > 0 ) fillColor = "#ffffcc";
+      		else fillColor = "#f7f7f7";  // no data
+      		return { color: "#999", weight: 1, fillColor: fillColor, fillOpacity: .6 };
+    		},
+    		onEachFeature: function( feature, layer ){
+      		layer.bindPopup( "<strong>" + feature.properties.Name + "</strong><br/>" + feature.properties.density + " rats per square mile" )
+    			}
+  		}  ).addTo(map);
+	});	  
+	  	  	  
   // load GeoJSON from an external file
-  $.getJSON("Mapeamento_DSEP_-__Sistema_Penitenciario.geojson",function(data){
+  $.getJSON("Mapeamento_DSEP_-__Sistema_Penitenciario_Planos.geojson",function(data){
     // add GeoJSON layer to the map once the file is loaded
     L.geoJson(data,{
     pointToLayer: function(feature,latlng){
