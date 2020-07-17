@@ -1,6 +1,3 @@
-﻿{
-    "type": "FeatureCollection",
-    "features": [
 {
     "type": "Feature",
     "properties": {
@@ -10,5 +7,4 @@
         "type": "Point",
         "coordinates": [ -53.813361,-29.687652]
     }
-},
-]}
+};
