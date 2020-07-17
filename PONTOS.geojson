@@ -1,0 +1,14 @@
+﻿{
+    "type": "FeatureCollection",
+    "features": [
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Megenagna",
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [ -53.813361,-29.687652]
+    }
+},
+]}
