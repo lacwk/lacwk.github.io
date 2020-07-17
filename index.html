@@ -25,24 +25,12 @@
 
 		    }).addTo(map);
 
-		  var aa = {
-		    "type": "Feature",
-		    "properties": {
-			"name": "Megenagna",
-		    },
-		    "geometry": {
-			"type": "Point",
-			"coordinates": [ -53.813361,-29.687652]
-		    }
-		};
-
-		new L.GeoJSON(aa).addTo(map);
-
 		  // load GeoJSON from an external file
 		  $.getJSON("PONTOS.geojson",function(data){
 		    // add GeoJSON layer to the map once the file is loaded
 		    L.geoJSON(data).addTo(map);
 		  });
+		  
 	  </script>
 	</body>
 </html>
