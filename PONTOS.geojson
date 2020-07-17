@@ -1,10 +1,22 @@
 {
-"type": "FeatureCollection",
+  "type": "FeatureCollection",
                                                                                 
-"features": [
-{ "type": "Feature", "id": 1, "properties": { "CASE_ENQUIRY_ID": 101000833162.0, "OPEN_DT": "05\/03\/2013 11:12:12 AM", "CLOSED_DT": null, "CASE_STATUS": "Open", "CLOSURE_REASON": "", "CASE_TITLE": "Rodent Activity", "SUBJECT": "Inspectional Services", "REASON": "Environmental Services", "TYPE": "Rodent Activity", "QUEUE": "ISD_Environmental Services (INTERNAL)", "Department": "ISD", "Location": "83-85 Cresthill Rd  Brighton  MA  02135", "fire_district": 11, "pwd_district": "04", "city_council_district": 9, "police_district": "D14", "neighborhood": "Allston \/ Brighton", "neighborhood_services_district": 15, "ward": "Ward 22", "precinct": 2211, "land_usage": "R2", "LOCATION_STREET_NAME": "83-85 Cresthill Rd", "LOCATION_ZIPCODE": 2135, "LATITUDE": 42.355988, "LONGITUDE": -71.157609, "Source": "Constituent Call" }, "geometry": { "type": "Point", "coordinates": [ -53.813361, -29.687652 ] } }
-,
-{ "type": "Feature", "id": 2, "properties": { "CASE_ENQUIRY_ID": 101001154721.0, "OPEN_DT": "08\/21\/2014 10:13:26 AM", "CLOSED_DT": null, "CASE_STATUS": "Open", "CLOSURE_REASON": "", "CASE_TITLE": "Rodent Activity", "SUBJECT": "Inspectional Services", "REASON": "Environmental Services", "TYPE": "Rodent Activity", "QUEUE": "ISD_Environmental Services (INTERNAL)", "Department": "ISD", "Location": "94 Horace St  East Boston  MA  02128", "fire_district": 1, "pwd_district": "09", "city_council_district": 1, "police_district": "A7", "neighborhood": "East Boston", "neighborhood_services_district": 1, "ward": "Ward 1", "precinct": 111, "land_usage": "E", "LOCATION_STREET_NAME": "94 Horace St", "LOCATION_ZIPCODE": 2128, "LATITUDE": 42.38287, "LONGITUDE": -71.01606, "Source": "Constituent Call" }, "geometry": { "type": "Point", "coordinates": [ -54.813361, -20.687652 ] } }
+  "features": [
+    { 
+      "type": "Feature", 
+      "geometry": { 
+        "type": "Point", 
+        "coordinates": [ -53.813361, -29.687652 ] 
+      } 
+    }
+    ,
+    { 
+      "type": "Feature", 
+      "geometry": { 
+        "type": "Point", 
+        "coordinates": [ -53.913361, -29.87652 ] 
+      } 
+    }
 
-]
+  ]
 }
