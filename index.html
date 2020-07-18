@@ -48,18 +48,18 @@
   // load GeoJSON from an external file
   $.getJSON("Mapeamento_DSEP_-__Sistema_Penitenciario.geojson",function(data){
     // add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data,{
+    var casas = L.geoJson(data,{
     pointToLayer: function(feature,latlng){
 	  var marker = L.marker(latlng);
   	 marker.bindPopup(feature.properties.Name);
   	return marker;
     }
-  }).addTo(map);
+  })
+	var clusters = L.markerClusterGroup();
+ 	clusters.addLayer(casas);
+ 	map.addLayer(clusters);   	  
   });
 	  
-	  
-	  
- 
   </script>
 	</body>
 </html>
