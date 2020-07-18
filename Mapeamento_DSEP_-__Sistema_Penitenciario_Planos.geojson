@@ -97,7 +97,7 @@
                 "type": "LineString"
             },
             "properties": {
-                "name": "2ª DPR"
+                "name": "2ª DPR",
                 "confirmados": "3"
             },
             "type": "Feature"
@@ -199,7 +199,7 @@
                 "type": "LineString"
             },
             "properties": {
-                "name": "6ª DPR"
+                "name": "6ª DPR",
                 "confirmados": "10"
             },
             "type": "Feature"
@@ -291,7 +291,7 @@
                 "type": "LineString"
             },
             "properties": {
-                "name": "5ª DPR"
+                "name": "5ª DPR",
                 "confirmados": "7"
             },
             "type": "Feature"
@@ -384,7 +384,7 @@
             },
             "properties": {
                 "name": "3ª DPR"
-                "confirmados": "5"
+                "confirmados": "5",
             },
             "type": "Feature"
         },
@@ -465,7 +465,7 @@
                 "type": "LineString"
             },
             "properties": {
-                "name": "4ª DPR"
+                "name": "4ª DPR",
                 "confirmados": "6"
             },
             "type": "Feature"
@@ -572,7 +572,7 @@
                 "type": "LineString"
             },
             "properties": {
-                "name": "7ªDPR"
+                "name": "7ªDPR",
                 "confirmados": "7"
             },
             "type": "Feature"
@@ -674,7 +674,7 @@
                 "type": "LineString"
             },
             "properties": {
-                "name": "1ª DPR"
+                "name": "1ª DPR",
                 "confirmados": "0"
             },
             "type": "Feature"
@@ -741,7 +741,7 @@
                 "type": "LineString"
             },
             "properties": {
-                "name": "10ª DPR"
+                "name": "10ª DPR",
                 "confirmados": "15"
             },
             "type": "Feature"
@@ -833,7 +833,7 @@
                 "type": "LineString"
             },
             "properties": {
-                "name": "8ª DPR"
+                "name": "8ª DPR",
                 "confirmados": "3"
             },
             "type": "Feature"
@@ -895,7 +895,7 @@
                 "type": "LineString"
             },
             "properties": {
-                "name": "9ª DPR"
+                "name": "9ª DPR",
                 "confirmados": "7"
             },
             "type": "Feature"
