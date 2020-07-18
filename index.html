@@ -28,7 +28,7 @@
 
 	$.getJSON("Mapeamento_DSEP_-__Sistema_Penitenciario_Planos.geojson",function(hoodData){
   	L.geoJson( hoodData  , {
-    		style: function(feature){
+    		/* style: function(feature){
       		var fillColor,
           	confirmados = feature.properties.confirmados;
       		if ( confirmados > 14 ) fillColor = "#006837";
@@ -38,7 +38,7 @@
       		else if ( confirmados > 2 ) fillColor = "#ffffcc";
       		else fillColor = "#f7f7f7";  // no data
       		return { color: "#999", weight: 1, fillColor: fillColor, fillOpacity: .6 };
-    		},
+    		}, */
     		onEachFeature: function( feature, layer ){
       		layer.bindPopup( "<strong>" + feature.properties.name + "</strong><br/>" + feature.properties.confirmados + " casos confirmados" )
     			}
