@@ -40,7 +40,7 @@
       		return { color: "#999", weight: 1, fillColor: fillColor, fillOpacity: .6 };
     		},
     		onEachFeature: function( feature, layer ){
-      		layer.bindPopup( "<strong>" + feature.properties.Name + "</strong><br/>" + feature.properties.confirmados + " casos confirmados" )
+      		layer.bindPopup( "<strong>" + feature.properties.name + "</strong><br/>" + feature.properties.confirmados + " casos confirmados" )
     			}
   		}  ).addTo(map);
 	});	  
