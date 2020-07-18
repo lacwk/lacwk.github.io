@@ -383,8 +383,8 @@
                 "type": "LineString"
             },
             "properties": {
-                "name": "3ª DPR"
-                "confirmados": "5",
+                "name": "3ª DPR",
+                "confirmados": "5"
             },
             "type": "Feature"
         },
