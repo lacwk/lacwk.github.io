@@ -98,6 +98,7 @@
             },
             "properties": {
                 "name": "2ª DPR"
+                "confirmados" : "3"
             },
             "type": "Feature"
         },
@@ -199,6 +200,7 @@
             },
             "properties": {
                 "name": "6ª DPR"
+                "confirmados" : "10"
             },
             "type": "Feature"
         },
@@ -290,6 +292,7 @@
             },
             "properties": {
                 "name": "5ª DPR"
+                "confirmados" : "7"
             },
             "type": "Feature"
         },
@@ -381,6 +384,7 @@
             },
             "properties": {
                 "name": "3ª DPR"
+                "confirmados" : "5"
             },
             "type": "Feature"
         },
@@ -462,6 +466,7 @@
             },
             "properties": {
                 "name": "4ª DPR"
+                "confirmados" : "6"
             },
             "type": "Feature"
         },
@@ -568,6 +573,7 @@
             },
             "properties": {
                 "name": "7ªDPR"
+                "confirmados" : "7"
             },
             "type": "Feature"
         },
@@ -669,6 +675,7 @@
             },
             "properties": {
                 "name": "1ª DPR"
+                "confirmados" : "0"
             },
             "type": "Feature"
         },
@@ -735,6 +742,7 @@
             },
             "properties": {
                 "name": "10ª DPR"
+                "confirmados" : "15"
             },
             "type": "Feature"
         },
@@ -826,6 +834,7 @@
             },
             "properties": {
                 "name": "8ª DPR"
+                "confirmados" : "3"
             },
             "type": "Feature"
         },
@@ -887,6 +896,7 @@
             },
             "properties": {
                 "name": "9ª DPR"
+                "confirmados" : "7"
             },
             "type": "Feature"
         }
