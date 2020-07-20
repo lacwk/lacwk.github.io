@@ -188,13 +188,13 @@
 	}).addTo(mapCluster);	
 
 
-	/*geojsonMarcadores = L.geoJson(presidios, {
+	geojsonMarcadores = L.geoJson(presidios, {
 		onEachFeature: onEachFeatureMarcadores,
 		pointToLayer: function(feature,latlng){
                 var marker = L.marker(latlng);
                 marker.bindPopup(feature.properties.name);
                 return marker;}
-	});*/
+	});
 	
 	
 	// control that shows state info on hover
@@ -227,13 +227,8 @@
 	}
 
 	
-	 var clusters = L.markerClusterGroup();
-	for (var i = 0; i < presidios.length; i++) {
-			var popup = presidios[i].name;
-			var marker = L.marker(latlng);
-			marker.bindPopup(feature.properties.name).bindPopup( popup );
-	}
-
+	var clusters = L.markerClusterGroup();
+	clusters.addLayer(geojsonMarcadores);
 	mapCluster.addLayer(clusters);
 
 </script>
