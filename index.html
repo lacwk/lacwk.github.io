@@ -167,6 +167,7 @@
 	//Mapa com clusters
 	
 	
+	var geojsonMarcadores;
 	
 	var mapCluster = L.map('mapCluster').setView([-29.687652, -53.813361], 6);
 
@@ -181,7 +182,7 @@
 	}).addTo(mapCluster);	
 
 
-	geojson = L.geoJson(presidios).addTo(mapCluster);
+	geojsonMarcadores = L.geoJson(presidios).addTo(mapCluster);
 
 	
 	
