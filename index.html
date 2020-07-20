@@ -194,22 +194,8 @@
 
 	info.addTo(mapCluster);
 
-	function zoomToFeature(e) {
-		mapCluster.fitBounds(e.target.getBounds());
-	}
 
-	function onEachFeature(feature, layer) {
-		layer.on({
-			mouseover: highlightFeature,
-			mouseout: resetHighlight,
-			click: zoomToFeature
-		});
-	}
-
-	geojson = L.geoJson(marcadoresPresidios, {
-		style: style,
-		onEachFeature: onEachFeature
-	}).addTo(mapCluster);
+	geojson = L.geoJson(marcadoresPresidios).addTo(mapCluster);
 
 	
 	
