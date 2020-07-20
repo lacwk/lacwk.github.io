@@ -229,10 +229,9 @@
 	 var clusters = L.markerClusterGroup();
 	for (var i = 0; i < presidios.length; i++) {
 			var a = presidios[i];
-			var title = a[2];
-			var marker = L.marker(new L.LatLng(a[0], a[1]), { title: title });
-			marker.bindPopup(title);
-			markers.addLayer(marker);
+			var marker = L.marker(new L.LatLng(a[0], a[1]));
+			marker.bindPopup(feature.properties.name);
+			clusters.addLayer(marker);
 	}
 
 	mapCluster.addLayer(clusters);
