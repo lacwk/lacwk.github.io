@@ -140,12 +140,7 @@
 
 	geojson = L.geoJson(regioes, {
 		style: style,
-		onEachFeature: onEachFeature,
-	        pointToLayer: function(feature,latlng){
-                var marker = L.marker(latlng);
-                marker.bindPopup(feature.properties.name);
-                return marker;
-      }
+		onEachFeature: onEachFeature
 	});
 
 	var legend = L.control({position: 'bottomright'});
@@ -193,7 +188,11 @@
 
 
 	geojsonMarcadores = L.geoJson(presidios, {
-		onEachFeature: onEachFeatureMarcadores
+		onEachFeature: onEachFeatureMarcadores,
+		pointToLayer: function(feature,latlng){
+                var marker = L.marker(latlng);
+                marker.bindPopup(feature.properties.name);
+                return marker;}
 	}).addTo(mapCluster);
 	
 	
