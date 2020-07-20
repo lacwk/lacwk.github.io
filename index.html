@@ -211,6 +211,7 @@
 	function onEachFeatureMarcadores(feature, layer) {
 		layer.on({
 			mouseover: highlightFeatureMarcadores,
+			mouseout: info.update();
 		});
 	}
 	
