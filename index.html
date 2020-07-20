@@ -141,7 +141,7 @@
 	geojson = L.geoJson(regioes, {
 		style: style,
 		onEachFeature: onEachFeature
-	});
+	}).addTo(map);;
 
 	var legend = L.control({position: 'bottomright'});
 
