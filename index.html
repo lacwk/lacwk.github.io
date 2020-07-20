@@ -140,8 +140,13 @@
 
 	geojson = L.geoJson(regioes, {
 		style: style,
-		onEachFeature: onEachFeature
-	}).addTo(map);
+		onEachFeature: onEachFeature,
+	        pointToLayer: function(feature,latlng){
+                var marker = L.marker(latlng);
+                marker.bindPopup(feature.properties.name);
+                return marker;
+      }
+	});
 
 	var legend = L.control({position: 'bottomright'});
 
