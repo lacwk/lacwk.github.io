@@ -174,25 +174,7 @@
 		id: 'mapbox/light-v9',
 		tileSize: 512,
 		zoomOffset: -1
-	}).addTo(mapCluster);
-	
-
-
-	// control that shows state info on hover
-
-	info.onAdd = function (mapCluster) {
-		this._div = L.DomUtil.create('div', 'info');
-		this.update();
-		return this._div;
-	};
-
-	info.update = function (props) {
-		this._div.innerHTML = '<h4>Casos Confirmados</h4>' +  (props ?
-			'<b>' + props.name + '</b><br />' + props.confirmados + ' pessoas / mi<sup>2</sup>'
-			: 'Escolha uma região');
-	};
-
-	info.addTo(mapCluster);
+	}).addTo(mapCluster);	
 
 
 	geojson = L.geoJson(marcadoresPresidios).addTo(mapCluster);
