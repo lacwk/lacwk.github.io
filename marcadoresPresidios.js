@@ -98,7 +98,7 @@
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-51.591171668777,-29.9535822210871]},"properties":{"id":"069EFECE7F14880E1DFE","name":"Penitenciária Estadual de Charqueadas"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-51.5958355614979,-29.9454923444527]},"properties":{"id":"01333193D21488105DB6","name":"Penitenciária Estadual do Jacuí "}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-51.5912525354957,-29.960486339149]},"properties":{"id":"00AFFFFD49148810BC7C","name":"Penitenciária Modulada Estadual de Charqueadas"}},
-{"type":"Feature","geometry":{"type":"Point","coordinates":[-51.726217748892,-29.9607383239527},"properties":{"id":"0D3103B0471488241375","name":"Presídio Estadual de São Jerônimo"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-51.726217748892,-29.9607383239527]},"properties":{"id":"0D3103B0471488241375","name":"Presídio Estadual de São Jerônimo"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-51.1861880216216,-30.0624946946745]},"properties":{"id":"08B34B460C14882B57A4","name":"10ª Delegacia Penitenciária"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-51.1865655264329,-30.0623360532493]},"properties":{"id":"0A954F837E1488280439","name":"Instituto Psiquiátrico Forense"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-51.1830564,-30.0724703]},"properties":{"id":"07DA9E7ADD148829E95F","name":"Cadeia Pública de Porto Alegre"}},
