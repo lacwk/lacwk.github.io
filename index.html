@@ -262,48 +262,18 @@
 	}).addTo(mapHeat);	
 	
 	
-	
-	geojsonHeat = L.geoJson(presidios, {
-		onEachFeature: onEachFeatureHeat,
-		var locations = presidios.features.mapHeat(function(estabelecimento){
+	geojsonHeat = 	presidios.features.map(function(estabelecimento){
 			var location = estabelecimento.geometry.coordinates.reserve();
 			location.push(0.5);
 			return location;
 		});
-		var heat = L.heatLayer(locations, {radius: 35})
+		var heat = L.heatLayer(geojsonHeat, {radius: 35})
 		mapHeat.addLayer(heat);	
 	});
 	
 		    
 	
-	// control that shows state info on hover
-	var infoHeat = L.control();
 
-	infoHeat.onAdd = function (mapHeat) {
-		this._div = L.DomUtil.create('div', 'infoHeat');
-		this.update();
-		return this._div;
-	};
-
-	infoHeat.update = function (props) {
-		this._div.innerHTML = '<h4>Casos Confirmados</h4>' +  (props ?
-			'<b>' + props.name + '</b><br />' 
-			: 'Escolha uma região');
-	};
-
-	infoHeat.addTo(mapHeat);
-	
-	function onEachFeatureHeat(feature, layer) {
-		layer.on({
-			mouseover: highlightFeatureHeat,
-			mouseout: infoHeat.update()
-		});
-	}
-	
-	function highlightFeatureHeat(e) {
-		var layer = e.target;
-		infoHeat.update(layer.feature.properties);
-	}
 
 	
 
