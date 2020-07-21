@@ -265,13 +265,13 @@
 	
 	geojsonHeat = L.geoJson(presidios, {
 		onEachFeature: onEachFeatureHeat,
-		var locations = data.features.map(function(estabelecimento){
+		var locations = presidios.features.mapHeat(function(estabelecimento){
 			var location = estabelecimento.geometry.coordinates.reserve();
 			location.push(0.5);
 			return location;
 		});
 		var heat = L.heatLayer(locations, {radius: 35})
-		map.addLayer(heat);	
+		mapHeat.addLayer(heat);	
 	});
 	
 		    
