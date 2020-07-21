@@ -262,7 +262,7 @@
 	}).addTo(mapHeat);	
 	
 	
-	geojsonHeat = 	presidios.features.map(function(estabelecimento){
+	geojsonHeat = 	marcadoresPresidios.features.map(function(estabelecimento){
 			return estabelecimento.geometry.coordinates.reverse();
 		});
 		var heat = L.heatLayer(geojsonHeat).addTo(mapHeat);
