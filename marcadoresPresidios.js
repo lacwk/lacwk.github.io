@@ -9,7 +9,7 @@
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-51.1475114858247,-29.7744528321898]},"properties":{"id":"0285B56FDE147F22A1BD","name":"Instituto Penal de São Leopoldo"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-51.4074832242091,-29.7828865346476]},"properties":{"id":"0CC806265D147F240AF3","name":"Penitenciária Modulada Estadual de Montenegro"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-50.2568830403206,-29.9580448023602]},"properties":{"id":"007FD5EE5D147F2582A4","name":"Penitenciária Modulada Estadual de Osório"}},
-{"type":"Feature","geometry":{"type":"Point","coordinates":[-50.7805804662771,-29.6563791378791},"properties":{"id":"0B9253E427147F265CF5","name":"Presídio Estadual de Taquara"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-50.7805804662771,-29.6563791378791]},"properties":{"id":"0B9253E427147F265CF5","name":"Presídio Estadual de Taquara"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-49.7386299948741,-29.3274621141317]},"properties":{"id":"031A7C0E48147F27192D","name":"Presídio Estadual Feminino de Torres"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-53.8157204140108,-29.6953742180596]},"properties":{"id":"0D30B23C02147F308281","name":"2ª Delegacia Penitenciária Regional"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-53.8024787016329,-29.7054289051442]},"properties":{"id":"0FF130B754147F39646B","name":"Instituto Penal de Santa Maria"}},
