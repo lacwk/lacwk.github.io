@@ -263,7 +263,7 @@
 	
 	
 	geojsonHeat = 	presidios.features.map(function(estabelecimento){
-			return estabelecimento.geometry.coordinates.reverse();
+			return estabelecimento.geometry.coordinates();
 		});
 		var heat = L.heatLayer(geojsonHeat).addTo(mapHeat);
 
