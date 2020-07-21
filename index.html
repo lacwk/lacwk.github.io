@@ -239,7 +239,21 @@
 	}
 
 	
-	var clusters = L.markerClusterGroup();
+	//var clusters = L.markerClusterGroup();
+	var clusters = L.markerClusterGroup({
+		maxClusterRadius: 120,
+		iconCreateFunction: function (cluster) {
+			var clusters = cluster.getAllChildMarkers();
+			var n = 0;
+			for (var i = 0; i < clusters.length; i++) {
+				n += clusters[i].confirmadosInternos;
+			}
+			return L.divIcon({ html: n, className: 'mycluster', iconSize: L.point(40, 40) });
+		},
+		//Disable all of the defaults:
+		spiderfyOnMaxZoom: false, showCoverageOnHover: false, zoomToBoundsOnClick: false
+	});
+	
 	clusters.addLayer(geojsonMarcadores);
 	mapCluster.addLayer(clusters);
 	
