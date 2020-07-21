@@ -269,10 +269,12 @@
 			var location = estabelecimento.geometry.coordinates.reserve();
 			location.push(0.5);
 			return location;
+		});
+		var heat = L.heatLayer(locations, {radius: 35})
+		map.addLayer(heat);	
 	});
 	
-	var heat = L.heatLayer(locations, {radius: 35}};
-	map.addLayer(heat);			    
+		    
 	
 	// control that shows state info on hover
 	var infoHeat = L.control();
