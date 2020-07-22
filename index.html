@@ -262,7 +262,7 @@
 		iconCreateFunction: function (cluster) {
 			var clusters = cluster.getAllChildMarkers();
 			var n = 0;
-			for (var i = 0; i < clusters.length; i++) {
+			for (var i = 1; i < clusters.length; i++) {
 				n += clusters[i].obitosInternos;
 			}
 			return L.divIcon({ html: n, className: 'mycluster', iconSize: L.point(40, 40) });
