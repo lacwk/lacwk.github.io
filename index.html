@@ -452,7 +452,7 @@
 	geojsonHeat = 	presidios.features.map(function(estabelecimento){
 			var n = 0;
 			n = estabelecimento.confirmadosInternos+estabelecimento.ConfirmadosServidores;
-			var location = geometry.coordinates.reverse();
+			var location = estabelecimento.geometry.coordinates.reverse();
 			location.push(n);
 			return location;
 		});
