@@ -458,7 +458,73 @@
 		});
 		var heat = L.heatLayer(geojsonHeat,{ radius: 35 }).addTo(mapHeat);
 
-		 
+	//mapa por regioes de presidios
+	
+	var mapRegiaoPresidios = L.map('mapRegiaoPresidios').setView([-29.687652, -53.813361], 6);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFjd2siLCJhIjoiY2tjd2I4MjNlMGM5MTJxcW9tZHdnemZuNCJ9.v_q4ZesGT2m54KW46Ze-Bw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/light-v9',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mapRegiaoPresidios);
+
+
+	// control that shows state info on hover
+	var infoRegiaoPresidios = L.control();
+
+	infoRegiaoPresidios.onAdd = function (mapRegiaoPresidios) {
+		this._div = L.DomUtil.create('div', 'infoRegiaoPresidios');
+		this.update();
+		return this._div;
+	};
+
+	infoRegiaoPresidios.update = function (props) {
+		this._div.innerHTML = '<h4>Casos Confirmados</h4>' +  (props ?
+			'<b>' + props.name + '</b><br />' + props.confirmadosInternos + ' pessoas / mi<sup>2</sup>'
+			: 'Escolha um estabelecimento');
+	};
+
+	infoRegiaoPresidios.addTo(mapRegiaoPresidios);
+
+	function styleRegiaoPresidios(feature) {
+		return {
+			weight: 2,
+			opacity: 1,
+			color: 'white',
+			dashArray: '3',
+			fillOpacity: 0.7,
+			fillColor: getColor(feature.properties.confirmadosInternos)
+		};
+	}
+
+	var geojsonRegiaoPresidios;
+
+	function resetHighlightRegiaoPresidios(e) {
+		geojsonRegiaoPresidios.resetStyle(e.target);
+		infoRegiaoPresidios.update();
+	}
+
+
+	function onEachFeatureRegiaoPresidios(feature, layer) {
+		layer.on({
+			mouseover: highlightFeature,
+			mouseout: resetHighlightRegiaoPresidios,
+			click: zoomToFeature
+		});
+	}
+
+	geojsonRegiaoPresidios = L.geoJson(regiaoPresidios, {
+		style: styleRegiaoPresidios,
+		onEachFeature: onEachFeature
+	}).addTo(mapRegiaoPresidios);
+
+
+	legend.addTo(mapRegiaoPresidios);
+
 
 </script>
 
