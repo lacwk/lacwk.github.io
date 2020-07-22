@@ -356,7 +356,7 @@
 			icon: new L.divIcon({ html: n,        className: 'cluster d-' + d,
         					iconSize: null })
 		});
-                marker.bindPopup(feature.properties.name);
+                marker.bindPopup(feature.geometry.coordinates);
 		marker.confirmadosInternos = feature.properties.confirmadosInternos;
 		marker.confirmadosServidores = feature.properties.confirmadosServidores;			
 		marker.obitosInternos = feature.properties.confirmadosInternos;			
@@ -381,7 +381,8 @@
 		this._div.innerHTML = '<h4>Casos Confirmados</h4>' +  (props ?
 			'<b>' + props.name + '</b><br />' + 'Confirmados Presos: ' + props.confirmadosInternos + '</b><br />' + 'Confirmados Servidores: ' + props.confirmadosServidores 
 						 + '</b><br />' + 'Óbitos Presos: ' + props.obitosInternos 
-						+ '</b><br />' + 'Óbitos Servidores: ' + props.obitosServidores 								       
+						+ '</b><br />' + 'Óbitos Servidores: ' + props.obitosServidores 
+								   
 			: 'Escolha um estabelecimento prisional');
 	};
 
