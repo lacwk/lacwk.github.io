@@ -451,7 +451,7 @@
 	geojsonHeat = 	presidios.features.map(function(estabelecimento){
 			var n = 0;
 			n = estabelecimento.confirmadosInternos+estabelecimento.ConfirmadosServidores
-			return [estabelecimento.latlng.lat, estabelecimento.latlng.lng, n];
+			return [estabelecimento.latlng.lat(), estabelecimento.latlng.lng(), n];
 		});
 		var heat = L.heatLayer(geojsonHeat).addTo(mapHeat);
 
