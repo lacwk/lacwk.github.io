@@ -356,7 +356,7 @@
 			icon: new L.divIcon({ html: n,        className: 'cluster d-' + d,
         					iconSize: null })
 		});
-                marker.bindPopup(feature.geometry.coordinates);
+                marker.bindPopup(feature.properties.name);
 		marker.confirmadosInternos = feature.properties.confirmadosInternos;
 		marker.confirmadosServidores = feature.properties.confirmadosServidores;			
 		marker.obitosInternos = feature.properties.confirmadosInternos;			
@@ -451,8 +451,10 @@
 	
 	geojsonHeat = 	presidios.features.map(function(estabelecimento){
 			var n = 0;
-			n = estabelecimento.confirmadosInternos+estabelecimento.ConfirmadosServidores
-			return [estabelecimento.lat(), estabelecimento.lng(), n];
+			n = estabelecimento.confirmadosInternos+estabelecimento.ConfirmadosServidores;
+			var location = geometry.coordinates.reverse();
+			location.push(n);
+			return location;
 		});
 		var heat = L.heatLayer(geojsonHeat).addTo(mapHeat);
 
