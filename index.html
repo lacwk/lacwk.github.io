@@ -565,7 +565,31 @@
 		zoomOffset: -1
 	}).addTo(mapMarcadores);
 	
-	geojsonMarcadores.addTo(mapMarcadores);
+	var geojsonMarkers;
+	
+	
+	geojsonMarkers = L.geoJson(presidios, {
+		onEachFeature: onEachFeatureMarcadores,
+		pointToLayer: function(feature,latlng){
+		var n = 0;
+		n = feature.properties.confirmadosInternos + feature.properties.confirmadosServidores;
+		var d = 0;
+		d = getD(n);		
+                var marker = L.marker(latlng, {
+			icon: new L.divIcon({ html: n,        className: 'cluster d-' + d,
+        					iconSize: null })
+		});
+                marker.bindPopup(feature.properties.name);
+		marker.confirmadosInternos = feature.properties.confirmadosInternos;
+		marker.confirmadosServidores = feature.properties.confirmadosServidores;			
+		marker.obitosInternos = feature.properties.confirmadosInternos;			
+		marker.obitosServidores = feature.properties.obitosServidores;	
+		marker.populacaoInternos = feature.properties.populacaoInternos;			
+		marker.populacaoServidores = feature.properties.populacaoServidores;				
+                return marker;}
+	});
+	
+	geojsonMarkers.addTo(mapMarcadores);
 
 </script>
 
