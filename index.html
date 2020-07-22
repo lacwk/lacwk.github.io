@@ -403,11 +403,10 @@
 			d = getD(n);
 			
 			
-			return L.divIcon({ html: n,        className: 'cluster d-' + d,,
+			return L.divIcon({ html: n,        className: 'cluster d-' + d,
         iconSize: null });
 		},
-		//Disable all of the defaults:
-		spiderfyOnMaxZoom: false, showCoverageOnHover: false, zoomToBoundsOnClick: false
+
 	});
 	
 	clusters.addLayer(geojsonMarcadores);
