@@ -576,16 +576,10 @@
 		var d = 0;
 		d = getD(n);		
                 var marker = L.marker(latlng, {
-			icon: new L.divIcon({ html: n,        className: 'cluster d-' + d,
+			icon: new L.divIcon({ html: n,        className: 'cluster d-' + 0,
         					iconSize: null })
 		});
-                marker.bindPopup(feature.properties.name);
-		marker.confirmadosInternos = feature.properties.confirmadosInternos;
-		marker.confirmadosServidores = feature.properties.confirmadosServidores;			
-		marker.obitosInternos = feature.properties.confirmadosInternos;			
-		marker.obitosServidores = feature.properties.obitosServidores;	
-		marker.populacaoInternos = feature.properties.populacaoInternos;			
-		marker.populacaoServidores = feature.properties.populacaoServidores;				
+                marker.bindPopup(feature.properties.name);				
                 return marker;}
 	}).addTo(mapMarcadores);
 	
