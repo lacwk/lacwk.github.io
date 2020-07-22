@@ -216,6 +216,7 @@
 		pointToLayer: function(feature,latlng){
                 var marker = L.marker(latlng);
                 marker.bindPopup(feature.properties.name);
+		marker.obitosInternos = feature.properties.obitosInternos
                 return marker;}
 	});
 	
