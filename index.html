@@ -575,7 +575,7 @@
 		n = feature.properties.confirmadosInternos + feature.properties.confirmadosServidores;
 		var d = 0;
 		d = getD(n);		
-                var marker = L.marker(latlng, {
+                var marker = L.marker(presidios.geometry.coordinates.reverse(), {
 			icon: new L.divIcon({ html: n,        className: 'cluster d-' + d,
         					iconSize: null })
 		});
