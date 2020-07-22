@@ -212,6 +212,8 @@
 <script type="text/javascript" src="regioes.js"></script>
 	
 <script type="text/javascript" src="marcadoresPresidios.js"></script>	
+
+<script type="text/javascript" src="marcadoresPresidios2.js"></script>		
 	
 <script type="text/javascript" src="planosPresidios.js"></script>		
 
@@ -572,7 +574,7 @@
 	var geojsonMarkers;
 	
 	
-	geojsonMarkers = L.geoJson(presidios, {
+	geojsonMarkers = L.geoJson(presidios2, {
 		onEachFeature: onEachFeatureMarkers,
 		pointToLayer: function(feature,latlng){
 		var n2 = 0;
