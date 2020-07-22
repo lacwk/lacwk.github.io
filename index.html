@@ -456,7 +456,7 @@
 			location.push(n);
 			return location;
 		});
-		var heat = L.heatLayer(geojsonHeat).addTo(mapHeat);
+		var heat = L.heatLayer(geojsonHeat,{ radius: 35 }).addTo(mapHeat);
 
 		 
 
