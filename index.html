@@ -578,16 +578,22 @@
 		var n2 = 0;
 		n2 = feature.properties.confirmadosInternos + feature.properties.confirmadosServidores;
 		var d2 = 0;
-		d2 = getD(n2);		
+		d2 = getD(n);		
                 var marker2 = L.marker(latlng, {
-			icon: new L.divIcon({ html: n2,        className: 'cluster d-' + 0,
+			icon: new L.divIcon({ html: n2,        className: 'cluster d-' + d2,
         					iconSize: null })
 		});
-                marker2.bindPopup(feature.properties.name);				
+                marker2.bindPopup(feature.properties.name);
+		marker2.confirmadosInternos = feature.properties.confirmadosInternos;
+		marker2.confirmadosServidores = feature.properties.confirmadosServidores;			
+		marker2.obitosInternos = feature.properties.confirmadosInternos;			
+		marker2.obitosServidores = feature.properties.obitosServidores;	
+		marker2.populacaoInternos = feature.properties.populacaoInternos;			
+		marker2.populacaoServidores = feature.properties.populacaoServidores;				
                 return marker2;}
 	});
 	
-	mapMarcadores.addLayer(geojsonMarcadores);
+	mapMarcadores.addLayer(geojsonMarkers);
 	
 	var infoMarkers = L.control();
 
