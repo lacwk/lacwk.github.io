@@ -608,14 +608,14 @@
 
 	infoMarkers.addTo(mapMarcadores);
 	
-	function onEachFeatureinfoMarkers(feature, layer) {
+	function onEachFeatureMarkers(feature, layer) {
 		layer.on({
-			mouseover: highlightFeatureinfoMarkers,
-			mouseout: resetHighlightinfoMarkers,
+			mouseover: highlightFeatureMarkers,
+			mouseout: resetHighlightMarkers,
 		});
 	}
 	
-	function highlightFeatureinfoMarkers(e) {
+	function highlightFeatureMarkers(e) {
 		var layer = e.target;
 		infoMarkers.update(layer.feature.properties);
 	}
