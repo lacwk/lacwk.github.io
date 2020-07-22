@@ -232,7 +232,7 @@
 
 	infoMarcadores.update = function (props) {
 		this._div.innerHTML = '<h4>Casos Confirmados</h4>' +  (props ?
-			'<b>' + props.confirmadosInternos + '</b><br />' 
+			'<b>' + props.names + '</b><br />' 
 			: 'Escolha um estabelecimento prisional');
 	};
 
@@ -241,7 +241,7 @@
 	function onEachFeatureMarcadores(feature, layer) {
 		layer.on({
 			mouseover: highlightFeatureMarcadores,
-			mouseout: info.update()
+			mouseout: infoMarcadores.update()
 		});
 	}
 	
@@ -258,7 +258,7 @@
 			var clusters = cluster.getAllChildMarkers();
 			var n = 0;
 			for (var i = 0; i < clusters.length; i++) {
-				n += clusters[i].confirmadosInternos;
+				n += clusters[i].obitosInternos;
 			}
 			return L.divIcon({ html: n, className: 'mycluster', iconSize: L.point(40, 40) });
 		},
