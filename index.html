@@ -46,28 +46,24 @@
 		</style>
 
 	<style>
-		.mycluster {
-			width: 40px;
-			height: 40px;
-			background-color: greenyellow;
-			text-align: center;
-			font-size: 24px;
-		}
 		
-		  .cluster {
-		    background: #2d84c8;
+				return d > 14 ? '#800026' :
+				d > 11  ? '#BD0026' :
+				d > 10  ? '#E31A1C' :
+				d > 8  ? '#FC4E2A' :
+				d > 5   ? '#FD8D3C' :
+				d > 3   ? '#FEB24C' :
+				d > 2   ? '#FED976' :
+							'#FFEDA0';
+		
+		.cluster {
+		    background: #FFEDA0;
 		    border-radius: 50%;
 		    text-align: center;
 		    color: white;
 		    font-weight: 700;
 		    border: 1px solid #2d84c8;
 		    font-family: monospace;
-		    font-size: 14px;
-		    height: 28px;
-		    width: 28px;
-		    line-height: 28px;
-		    margin-top: -14px;
-		    margin-left: -14px;  
 		  }
 
 		  .cluster:before {
@@ -80,6 +76,105 @@
 		    right: 1px;
 		    bottom: 1px;
 		    border: 1px solid white;
+		  }
+
+		  .d-1 {
+		    background: #FED976;			  
+		    font-size: 14px;
+		    height: 28px;
+		    width: 28px;
+		    line-height: 28px;
+		    margin-top: -14px;
+		    margin-left: -14px;
+		  }
+
+		  .d-2 {
+		    background: #FEB24C;			 
+		    font-size: 16px;
+		    height: 34px;
+		    width: 34px;
+		    line-height: 35px;
+		    margin-top: -17px;
+		    margin-left: -17px;
+		  }
+
+		  .d-2:before {
+		    border-width: 2px;
+		  }
+
+		  .d-3 {
+		    background: #FD8D3C;	  
+		    font-size: 18px;
+		    height: 48px;
+		    width: 47px;
+		    line-height: 47px;
+		    border-width: 3px;
+		    margin-top: -24px;
+		    margin-left: -24px;
+		  }
+
+		  .d-3:before {
+		    border-width: 3px;
+		  }
+
+		  .d-4 {
+		    background: #FC4E2A;	  
+		    font-size: 18px;
+		    height: 58px;
+		    width: 58px;
+		    line-height: 57px;
+		    border-width: 4px;
+		    margin-top: -29px;
+		    margin-left: -29px;
+		  }
+
+		  .d-4:before {
+		    border-width: 4px;
+		  }
+		
+		.d-5 {
+		    background: #E31A1C;	  
+		    font-size: 18px;
+		    height: 58px;
+		    width: 58px;
+		    line-height: 57px;
+		    border-width: 4px;
+		    margin-top: -29px;
+		    margin-left: -29px;
+		  }
+
+		  .d-5:before {
+		    border-width: 4px;
+		  }
+		
+		.d-6 {
+		    background: #BD0026;	  
+		    font-size: 18px;
+		    height: 58px;
+		    width: 58px;
+		    line-height: 57px;
+		    border-width: 4px;
+		    margin-top: -29px;
+		    margin-left: -29px;
+		  }
+
+		  .d-6:before {
+		    border-width: 4px;
+		  }
+		
+		.d-7 {
+		    background: #FC4E2A;	  
+		    font-size: 18px;
+		    height: 58px;
+		    width: 58px;
+		    line-height: 57px;
+		    border-width: 4px;
+		    margin-top: -29px;
+		    margin-left: -29px;
+		  }
+
+		  .d-7:before {
+		    border-width: 4px;
 		  }
 
 	</style>	
@@ -218,7 +313,16 @@
 
 	legend.addTo(map);
 	
-	
+         function getD(d) {
+		return d > 14 ? 7 :
+				d > 11  ? 6 :
+				d > 10  ? 5:
+				d > 8  ? 4 :
+				d > 5   ? 3:
+				d > 3   ? 2 :
+				d > 2   ? 1 :
+							1;
+	}
 	
 	//Mapa com clusters
 	
@@ -294,7 +398,12 @@
 			for (var i = 1; i < clusters.length; i++) {
 				n += clusters[i].obitosInternos;
 			}
-			return L.divIcon({ html: n,         className: 'cluster',
+			
+			var d = 1;
+			d = getD(n);
+			
+			
+			return L.divIcon({ html: n,        className: 'cluster d-' + d,,
         iconSize: null });
 		},
 		//Disable all of the defaults:
