@@ -24,6 +24,10 @@
 			width: 600px;
 			height: 400px;
 		}
+		#mapMarcadores {
+			width: 600px;
+			height: 400px;
+		}
 		#mapCluster {
 			width: 600px;
 			height: 400px;
@@ -35,7 +39,8 @@
 		#mapRegiaoPresidios {
 			width: 600px;
 			height: 400px;
-		}		
+		}
+		
 	</style>
 
 	<style>#map { width: 600px; height: 400px; }
@@ -50,6 +55,8 @@
 		</style>
 	
 		<style>#mapRegiaoPresidios { width: 600px; height: 400px; }
+		</style>
+		<style>#mapMarcadores { width: 600px; height: 400px; }
 		</style>
 
 	<style>
@@ -192,6 +199,8 @@
 <body>
 
 <div id='map'></div>
+
+<div id='mapMarcadores'></div>	
 	
 <div id='mapCluster'></div>	
 	
@@ -336,6 +345,25 @@
 				d > 2   ? 1 :
 							0;
 	}
+	
+	//Mapa com Marcadores
+	
+
+	var mapMarcadores = L.map('mapMarcadores').setView([-29.687652, -53.813361], 6);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFjd2siLCJhIjoiY2tjd2I4MjNlMGM5MTJxcW9tZHdnemZuNCJ9.v_q4ZesGT2m54KW46Ze-Bw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/light-v9',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mapMarcadores);
+	
+	geojsonMarcadores.addTo(mapMarcadores);
+	
+	
 	
 	//Mapa com clusters
 	
