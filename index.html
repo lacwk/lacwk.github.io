@@ -51,7 +51,7 @@
 		    background: #FFEDA0;
 		    border-radius: 50%;
 		    text-align: center;
-		    color: white;
+		    color: #b8bec2;
 		    font-weight: 700;
 		    border: 1px solid #FFEDA0;
 		    font-family: monospace;
@@ -350,7 +350,7 @@
 		pointToLayer: function(feature,latlng){
                 var marker = L.marker(latlng);
                 marker.bindPopup(feature.properties.name);
-		marker.obitosInternos = feature.properties.obitosInternos
+		marker.obitosInternos = feature.properties.confirmadosInternos;
                 return marker;}
 	});
 	
