@@ -350,7 +350,12 @@
 		pointToLayer: function(feature,latlng){
                 var marker = L.marker(latlng);
                 marker.bindPopup(feature.properties.name);
-		marker.obitosInternos = feature.properties.confirmadosInternos;
+		marker.confirmadosInternos = feature.properties.confirmadosInternos;
+		marker.confirmadosServidores = feature.properties.confirmadosServidores;			
+		marker.obitosInternos = feature.properties.confirmadosInternos;			
+		marker.obitosServidores = feature.properties.obitosServidores;	
+		marker.populacaoInternos = feature.properties.confirmadosInternos;			
+		marker.populacaoServidores = feature.properties.obitosServidores;				
                 return marker;}
 	});
 	
@@ -367,7 +372,8 @@
 
 	infoMarcadores.update = function (props) {
 		this._div.innerHTML = '<h4>Casos Confirmados</h4>' +  (props ?
-			'<b>' + props.obitosInternos + '</b><br />' 
+			'<b>' + props.name + '</b><br />' + 'Confirmados Presos: ' + props.confirmadosInternos + '</b><br />' +
+								       + 'Confirmados Servidores: ' + props.confirmadosInternos 
 			: 'Escolha um estabelecimento prisional');
 	};
 
@@ -398,7 +404,8 @@
 			var clusters = cluster.getAllChildMarkers();
 			var n = 0;
 			for (var i = 1; i < clusters.length; i++) {
-				n += clusters[i].obitosInternos;
+				n += clusters[i].confirmadosInternos;
+				n += clusters[i].confirmadosServidores;
 			}
 			
 			var d = 1;
