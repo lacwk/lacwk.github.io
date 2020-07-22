@@ -44,6 +44,18 @@
 		<style>#mapHeat { width: 600px; height: 400px; }
 .infoMarcadores { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .infoMarcadores h4 { margin: 0 0 5px; color: #777; }
 		</style>
+
+	<style>
+		.mycluster {
+			width: 40px;
+			height: 40px;
+			background-color: greenyellow;
+			text-align: center;
+			font-size: 24px;
+		}
+
+	</style>	
+	
 </head>
 <body>
 
@@ -248,7 +260,7 @@
 			for (var i = 0; i < clusters.length; i++) {
 				n += clusters[i].confirmadosInternos;
 			}
-			return L.divIcon({ html: n});
+			return L.divIcon({ html: n, className: 'mycluster', iconSize: L.point(40, 40) });
 		},
 		//Disable all of the defaults:
 		spiderfyOnMaxZoom: false, showCoverageOnHover: false, zoomToBoundsOnClick: false
