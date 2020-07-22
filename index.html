@@ -379,7 +379,7 @@
 
 	infoMarcadores.update = function (props) {
 		this._div.innerHTML = '<h4>Casos Confirmados</h4>' +  (props ?
-			'<b>' + props.name + '</b><br />' + 'Confirmados Presos: ' + props.confirmadosInternos + '</b><br />' + 'Confirmados Servidores: ' + props.confirmadosInternos 
+			'<b>' + props.name + '</b><br />' + 'Confirmados Presos: ' + props.confirmadosInternos + '</b><br />' + 'Confirmados Servidores: ' + props.confirmadosServidores 
 						 + '</b><br />' + 'Óbitos Presos: ' + props.obitosInternos 
 						+ '</b><br />' + 'Óbitos Servidores: ' + props.obitosServidores 								       
 			: 'Escolha um estabelecimento prisional');
@@ -449,7 +449,9 @@
 	
 	
 	geojsonHeat = 	presidios.features.map(function(estabelecimento){
-			return estabelecimento.geometry.coordinates.reverse();
+			var n = 0;
+			n = estabelecimento.confirmadosInternos+estabelecimento.ConfirmadosServidores
+			return [estabelecimento.geometry.coordinates.reverse(), n];
 		});
 		var heat = L.heatLayer(geojsonHeat).addTo(mapHeat);
 
