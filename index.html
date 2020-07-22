@@ -569,7 +569,7 @@
 	
 	
 	geojsonMarkers = L.geoJson(presidios, {
-		onEachFeature: onEachFeatureMarcadores,
+		onEachFeature: onEachFeatureMarkers,
 		pointToLayer: function(feature,latlng){
 		var n = 0;
 		n = feature.properties.confirmadosInternos + feature.properties.confirmadosServidores;
@@ -588,6 +588,43 @@
 		marker.populacaoServidores = feature.properties.populacaoServidores;				
                 return marker;}
 	});
+	
+	var infoMarkers = L.control();
+
+	infoMarkers.onAdd = function (mapMarcadores) {
+		this._div = L.DomUtil.create('div', 'infoMarkers');
+		this.update();
+		return this._div;
+	};
+
+	infoMarkers.update = function (props) {
+		this._div.innerHTML = '<h4>Casos Confirmados</h4>' +  (props ?
+			'<b>' + props.name + '</b><br />' + 'Confirmados Presos: ' + props.confirmadosInternos + '</b><br />' + 'Confirmados Servidores: ' + props.confirmadosServidores 
+						 + '</b><br />' + 'Óbitos Presos: ' + props.obitosInternos 
+						+ '</b><br />' + 'Óbitos Servidores: ' + props.obitosServidores 
+								   
+			: 'Escolha um estabelecimento prisional');
+	};
+
+	infoMarkers.addTo(mapMarcadores);
+	
+	function onEachFeatureinfoMarkers(feature, layer) {
+		layer.on({
+			mouseover: highlightFeatureinfoMarkers,
+			mouseout: resetHighlightinfoMarkers,
+		});
+	}
+	
+	function highlightFeatureinfoMarkers(e) {
+		var layer = e.target;
+		infoMarkers.update(layer.feature.properties);
+	}
+	
+	function resetHighlightMarkers(e) {
+		geojsonMarkers.resetStyle(e.target);
+		infoMarkers.update();
+	}	
+	
 	
 	geojsonMarkers.addTo(mapMarcadores);
 
