@@ -57,6 +57,7 @@
 		<style>#mapRegiaoPresidios { width: 600px; height: 400px; }
 		</style>
 		<style>#mapMarcadores { width: 600px; height: 400px; }
+			.infoMarkers { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .infoMarkers h4 { margin: 0 0 5px; color: #777; }
 		</style>
 
 	<style>
@@ -565,23 +566,28 @@
 		zoomOffset: -1
 	}).addTo(mapMarcadores);
 	
+	
+	
+	
 	var geojsonMarkers;
 	
 	
 	geojsonMarkers = L.geoJson(presidios, {
 		onEachFeature: onEachFeatureMarkers,
 		pointToLayer: function(feature,latlng){
-		var n = 0;
-		n = feature.properties.confirmadosInternos + feature.properties.confirmadosServidores;
-		var d = 0;
-		d = getD(n);		
-                var marker = L.marker(latlng, {
-			icon: new L.divIcon({ html: n,        className: 'cluster d-' + 0,
+		var n2 = 0;
+		n2 = feature.properties.confirmadosInternos + feature.properties.confirmadosServidores;
+		var d2 = 0;
+		d2 = getD(n2);		
+                var marker2 = L.marker(latlng, {
+			icon: new L.divIcon({ html: n2,        className: 'cluster d-' + 0,
         					iconSize: null })
 		});
-                marker.bindPopup(feature.properties.name);				
-                return marker;}
-	}).addTo(mapMarcadores);
+                marker2.bindPopup(feature.properties.name);				
+                return marker2;}
+	});
+	
+	mapMarcadores.addLayer(geojsonMarkers);
 	
 	var infoMarkers = L.control();
 
