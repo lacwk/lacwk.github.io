@@ -354,7 +354,7 @@
 		d = getD(n);		
                 var marker = L.marker(latlng, {
 			icon: new L.divIcon({ html: n,        className: 'cluster d-' + d,
-        					iconSize: null });
+        					iconSize: null })
 		});
                 marker.bindPopup(feature.properties.name);
 		marker.confirmadosInternos = feature.properties.confirmadosInternos;
